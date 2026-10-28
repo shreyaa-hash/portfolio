@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eeebef" />
+    <meta
+      name="description"
+      content="Shreya Gupta is an AI enthusiast and full-stack developer exploring machine learning, data analytics, and technology-driven solutions."
+    />
+    <title>Shreya Gupta — AI &amp; Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section class="intro-screen" id="intro-screen" role="dialog" aria-modal="true" aria-label="Portfolio introduction" hidden>
+      <div class="intro-sequence" aria-hidden="true">
+        <span class="intro-word intro-word-one">SHREYA</span>
+        <span class="intro-word intro-word-two">SHREYA GUPTA</span>
+        <span class="intro-word intro-word-three">AI ENTHUSIAST</span>
+        <span class="intro-word intro-word-four">FULL-STACK DEVELOPER</span>
+      </div>
+      <div class="intro-finale">
+        <p>SHREYA GUPTA <span>— AI / ML &amp; FULL-STACK</span></p>
+        <button id="intro-explore" type="button">EXPLORE <span>↗</span></button>
+      </div>
+      <button class="intro-skip" id="intro-skip" type="button">SKIP INTRO</button>
+    </section>
+
+    <main class="desktop" id="home">
+      <div class="ambient ambient-one" aria-hidden="true"></div>
+      <div class="ambient ambient-two" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <div class="date-pill" aria-label="Current date and time">
+        <span class="status-dot"></span>
+        <time id="clock"></time>
+      </div>
+
+      <button class="desktop-item item-left-top" data-view="work" aria-label="Open selected work">
+        <span class="file-icon gif-icon"><span>.WORK</span></span>
+        <span class="item-label">SELECTED_WORK</span>
+      </button>
+      <button class="desktop-item item-left-bottom" data-view="about" aria-label="Open about me">
+        <span class="file-icon red-icon"><span>HELLO</span></span>
+        <span class="item-label">ABOUT_ME.txt</span>
+      </button>
+      <button class="desktop-item item-right-top" data-view="archive" aria-label="Open archive">
+        <span class="folder-icon"><span>.JPG</span></span>
+        <span class="item-label">ARCHIVE</span>
+      </button>
+      <button class="desktop-item item-right-bottom" data-view="contact" aria-label="Open contact">
+        <span class="folder-icon blue-folder"><span>.LINK</span></span>
+        <span class="item-label">CONTACTS</span>
+      </button>
+
+      <section class="window" id="portfolio-window" aria-label="Portfolio window">
+        <header class="window-header">
+          <div class="window-controls">
+            <button class="window-control close-control" id="close-window" aria-label="Close window"></button>
+            <button class="window-control minimize-control" id="minimize-window" aria-label="Minimize window"></button>
+          </div>
+          <p class="window-title" id="window-title">SHREYA GUPTA — SELECTED WORK</p>
+          <span class="header-spacer" aria-hidden="true"></span>
+        </header>
+
+        <div class="window-content" id="window-content" tabindex="0">
+          <section class="view view-work active" data-panel="work">
+            <div class="intro-row">
+              <div>
+                <p class="eyebrow"><span class="live-dot"></span> OPEN TO INTERNSHIP OPPORTUNITIES</p>
+                <h1>Curious minds<br />build <span>what’s next.</span></h1>
+              </div>
+              <p class="intro-copy">AI enthusiast and Computer Science student building practical software and data-driven solutions for real-world problems.</p>
+            </div>
+            <div class="project-grid">
+              <button class="project-card project-large" data-project="0">
+                <span class="project-art art-orange">
+                  <span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span>
+                  <span class="art-word">LOAN<br />DEFAULT<br />RISK.</span>
+                  <span class="art-caption">01 / DATA ANALYTICS</span>
+                </span>
+                <span class="project-meta"><span>LOAN DEFAULT RISK DASHBOARD</span><span>01 ↗</span></span>
+              </button>
+              <button class="project-card project-small" data-project="1">
+                <span class="project-art art-lilac">
+                  <span class="art-orb"></span><span class="art-word art-word-small">Mental<br />health<br />insights.</span>
+                  <span class="art-caption">02 / MACHINE LEARNING</span>
+                </span>
+                <span class="project-meta"><span>MENTAL HEALTH SCORE PREDICTION</span><span>02 ↗</span></span>
+              </button>
+            </div>
+            <div class="window-note"><span>DATA ANALYTICS · AI / ML · SOFTWARE</span><span>SELECT A PROJECT ↗</span></div>
+          </section>
+
+          <section class="view view-about" data-panel="about" hidden>
+            <p class="eyebrow"><span class="live-dot"></span> A LITTLE ABOUT ME</p>
+            <div class="about-layout">
+              <div class="about-art"><span>✳</span><p>CURIOUS BY<br />NATURE.</p><small>COMPUTER SCIENCE &amp; ENGINEERING · IOT</small></div>
+              <div class="about-copy">
+                <h2>Hey, I’m <span>Shreya Gupta.</span></h2>
+                <p>I’m a Computer Science and Engineering student passionate about AI/ML, software development, and building technology-driven solutions to real-world problems.</p>
+                <p>My interests span data analytics, intelligent systems, IoT, and full-stack development. I enjoy exploring new technologies, turning ideas into practical projects, and collaborating with tech communities to make a meaningful impact.</p>
+                <p>My approach is hands-on, curious, and focused on continuous learning—from understanding the problem to building and evaluating a useful solution.</p>
+                <div class="skill-groups">
+                  <div><strong>AI &amp; DATA</strong><span>Machine Learning · Scikit-learn · Pandas · NumPy · Data Cleaning · EDA · Feature Engineering · Model Evaluation · Statistical Analysis · Matplotlib · Seaborn · Dashboard Design</span></div>
+                  <div><strong>DEVELOPMENT</strong><span>Python · SQL · Java · Full-Stack Development · Web Development · IoT</span></div>
+                  <div><strong>DATA &amp; TOOLS</strong><span>MySQL · MongoDB · Jupyter Notebook · Google Colab · Git · GitHub · MS Excel</span></div>
+                  <div><strong>FOUNDATIONS</strong><span>Data Structures · OOP · DBMS · Operating Systems · Computer Networks</span></div>
+                  <div><strong>COMMUNITY</strong><span>Technical Project Management · Community Building · Event Management</span></div>
+                </div>
+                <a class="text-link" href="mailto:0241csiot135@niet.co.in">LET’S CONNECT <span>↗</span></a>
+              </div>
+            </div>
+            <div class="education-card">
+              <p class="eyebrow">EDUCATION</p>
+              <div><strong>B.Tech — Computer Science &amp; Engineering (IoT)</strong><span>Noida Institute of Engineering and Technology · 2024–Present · CGPA 8.4/10</span></div>
+              <div><strong>Senior Secondary — Physics, Chemistry &amp; Mathematics</strong><span>BKD Aldrich Public School, Orai · 2024</span></div>
+            </div>
+          </section>
+
+          <section class="view view-archive" data-panel="archive" hidden>
+            <p class="eyebrow"><span class="live-dot"></span> LEADERSHIP, COMMUNITY &amp; LEARNING</p>
+            <h2 class="section-heading">Outside the code, <span>too.</span></h2>
+            <div class="archive-list">
+              <div><span>LEADERSHIP</span><strong>Vice President, Machine Magnets NIET</strong><span>CLUB INITIATIVES</span></div>
+              <div><span>OPEN SOURCE</span><strong>GirlScript Summer of Code (GSSoC) 2026</strong><span>CONTRIBUTOR</span></div>
+              <div><span>HACKATHON</span><strong>IDEAHACK 2.0</strong><span>PARTICIPANT</span></div>
+              <div><span>CERTIFICATION</span><strong>Linux OS Fundamentals — Infosys Springboard</strong><span>COMPLETED</span></div>
+            </div>
+            <p class="archive-footnote">I enjoy bringing people together, supporting technical initiatives, and learning by building.</p>
+          </section>
+
+          <section class="view view-contact" data-panel="contact" hidden>
+            <p class="eyebrow"><span class="live-dot"></span> GOOD THINGS START WITH A HELLO</p>
+            <div class="contact-layout">
+              <h2>Let’s build<br />what’s <span>next.</span></h2>
+              <div class="contact-links">
+                <p>I’m open to internship opportunities in AI/ML, data analytics, and software development. Let’s connect!</p>
+                <a href="mailto:0241csiot135@niet.co.in">0241CSIOT135@NIET.CO.IN <span>↗</span></a>
+                <a href="https://www.linkedin.com/in/shreya-gupta-252929321" target="_blank" rel="noreferrer">LINKEDIN <span>↗</span></a>
+                <a href="https://github.com/shreyaa-hash" target="_blank" rel="noreferrer">GITHUB <span>↗</span></a>
+                <p class="location-note">DELHI NCR, INDIA</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="view view-project" data-panel="project" hidden>
+            <button class="back-link" id="back-to-work">← BACK TO SELECTED WORK</button>
+            <p class="eyebrow" id="project-kicker"></p>
+            <h2 class="section-heading" id="project-heading"></h2>
+            <div class="project-detail-art" id="project-detail-art"></div>
+            <p class="project-description" id="project-description"></p>
+            <p class="project-tools" id="project-tools"></p>
+            <a class="text-link project-github" href="https://github.com/shreyaa-hash" target="_blank" rel="noreferrer">EXPLORE MY GITHUB PROFILE <span>↗</span></a>
+          </section>
+        </div>
+
+        <footer class="window-footer">
+          <span id="footer-message">AI, DATA &amp; SOFTWARE FOR REAL-WORLD PROBLEMS.</span>
+          <a href="mailto:0241csiot135@niet.co.in">SAY HELLO <span>↗</span></a>
+        </footer>
+      </section>
+
+      <nav class="dock" aria-label="Portfolio navigation">
+        <a class="dock-mark" href="#home" aria-label="Back to home">SG.</a>
+        <button class="dock-explore" id="explore-button">EXPLORE</button>
+        <button class="dock-menu" id="menu-button" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="menu-popover" id="menu-popover" hidden>
+          <button data-view="work">Selected work <span>01</span></button>
+          <button data-view="about">About me <span>02</span></button>
+          <button data-view="archive">Archive <span>03</span></button>
+          <button data-view="contact">Contact <span>04</span></button>
+        </div>
+      </nav>
+      <p class="bottom-caption">AI ENTHUSIAST · FULL-STACK DEVELOPER <span>© <span id="copyright-year"></span></span></p>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+  </body>
+</html>
