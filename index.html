@@ -19,23 +19,55 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <section class="intro-screen" id="intro-screen" role="dialog" aria-modal="true" aria-label="Portfolio introduction" hidden>
-      <div class="intro-sequence" aria-hidden="true">
-        <span class="intro-word intro-word-one">SHREYA</span>
-        <span class="intro-word intro-word-two">SHREYA GUPTA</span>
-        <span class="intro-word intro-word-three">AI ENTHUSIAST</span>
-        <span class="intro-word intro-word-four">FULL-STACK DEVELOPER</span>
+    <section class="intro-screen" id="intro-screen" role="dialog" aria-modal="true" aria-label="Shreya Gupta portfolio introduction">
+      <div class="intro-entry" id="intro-entry">
+        <p class="intro-entry-label">PORTFOLIO / 2026</p>
+        <div class="intro-entry-mark" aria-hidden="true">
+          <span>SG</span>
+          <i></i>
+        </div>
+        <div class="intro-entry-copy">
+          <p>SHREYA GUPTA</p>
+          <h1>Ideas become<br /><em>possible.</em></h1>
+        </div>
+        <button class="intro-enter" id="intro-enter" type="button">
+          <span class="intro-enter-label">ENTER PORTFOLIO</span>
+          <span class="intro-enter-arrow" aria-hidden="true">↗</span>
+        </button>
       </div>
-      <div class="intro-finale">
-        <p>SHREYA GUPTA <span>— AI / ML &amp; FULL-STACK</span></p>
-        <button id="intro-explore" type="button">EXPLORE <span>↗</span></button>
+
+      <div class="intro-cinema" id="intro-cinema" hidden>
+        <video class="intro-video" id="intro-video" src="public/vdo.mp4" muted playsinline preload="metadata" aria-label="Cinematic introduction to Shreya Gupta"></video>
+        <div class="intro-fallback" aria-hidden="true">
+          <div class="intro-fallback-orbit"></div>
+          <p class="intro-fallback-kicker">A HUMAN-CENTRED APPROACH TO</p>
+          <div class="intro-fallback-lines">
+            <span>SHREYA GUPTA</span>
+            <span>AI / ML</span>
+            <span>FULL-STACK DEVELOPMENT</span>
+            <span>REAL-WORLD TECHNOLOGY</span>
+          </div>
+        </div>
+        <div class="intro-reveal" aria-hidden="true">
+          <p>SHREYA GUPTA</p>
+          <span>AI ENTHUSIAST · FULL-STACK DEVELOPER</span>
+        </div>
       </div>
-      <button class="intro-skip" id="intro-skip" type="button">SKIP INTRO</button>
+
+      <div class="intro-controls">
+        <button class="intro-sound" id="intro-sound" type="button" aria-label="Enable background music" aria-pressed="false" hidden>
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="intro-sound-label">SOUND</span>
+        </button>
+        <button class="intro-skip" id="intro-skip" type="button">SKIP INTRO</button>
+      </div>
+      <audio id="intro-audio" src="public/intro-music.mp3" preload="none" loop></audio>
     </section>
 
     <main class="desktop" id="home">
-      <div class="ambient ambient-one" aria-hidden="true"></div>
-      <div class="ambient ambient-two" aria-hidden="true"></div>
+      <div class="ambient ambient-one" aria-hidden="true">
+        <canvas id="liquid-sculpture"></canvas>
+      </div>
       <div class="grain" aria-hidden="true"></div>
 
       <div class="date-pill" aria-label="Current date and time">
@@ -54,6 +86,10 @@
       <button class="desktop-item item-right-top" data-view="archive" aria-label="Open archive">
         <span class="folder-icon"><span>.JPG</span></span>
         <span class="item-label">ARCHIVE</span>
+      </button>
+      <button class="desktop-item item-right-middle" data-view="resume" aria-label="Open resume">
+        <span class="folder-icon resume-folder"><span>.PDF</span></span>
+        <span class="item-label">RESUME.pdf</span>
       </button>
       <button class="desktop-item item-right-bottom" data-view="contact" aria-label="Open contact">
         <span class="folder-icon blue-folder"><span>.LINK</span></span>
@@ -89,8 +125,8 @@
                 <span class="project-meta"><span>LOAN DEFAULT RISK DASHBOARD</span><span>01 ↗</span></span>
               </button>
               <button class="project-card project-small" data-project="1">
-                <span class="project-art art-lilac">
-                  <span class="art-orb"></span><span class="art-word art-word-small">Mental<br />health<br />insights.</span>
+                <span class="project-art art-project-image">
+                  <img src="public/Mental-health.png" alt="Mental Health Signal student wellness analytics project" />
                   <span class="art-caption">02 / MACHINE LEARNING</span>
                 </span>
                 <span class="project-meta"><span>MENTAL HEALTH SCORE PREDICTION</span><span>02 ↗</span></span>
@@ -102,7 +138,10 @@
           <section class="view view-about" data-panel="about" hidden>
             <p class="eyebrow"><span class="live-dot"></span> A LITTLE ABOUT ME</p>
             <div class="about-layout">
-              <div class="about-art"><span>✳</span><p>CURIOUS BY<br />NATURE.</p><small>COMPUTER SCIENCE &amp; ENGINEERING · IOT</small></div>
+              <div class="about-art">
+                <img src="public/Shreya.jpg" alt="Shreya Gupta outdoors on campus" />
+                <div class="about-art-label"><span>CURIOUS BY NATURE.</span><small>COMPUTER SCIENCE &amp; ENGINEERING · IOT</small></div>
+              </div>
               <div class="about-copy">
                 <h2>Hey, I’m <span>Shreya Gupta.</span></h2>
                 <p>I’m a Computer Science and Engineering student passionate about AI/ML, software development, and building technology-driven solutions to real-world problems.</p>
@@ -135,6 +174,27 @@
               <div><span>CERTIFICATION</span><strong>Linux OS Fundamentals — Infosys Springboard</strong><span>COMPLETED</span></div>
             </div>
             <p class="archive-footnote">I enjoy bringing people together, supporting technical initiatives, and learning by building.</p>
+          </section>
+
+          <section class="view view-resume" data-panel="resume" hidden>
+            <p class="eyebrow"><span class="live-dot"></span> CURRICULUM / PDF</p>
+            <div class="resume-heading">
+              <div>
+                <h2>Resume <span>2026</span></h2>
+                <p>Computer Science (IoT), AI/ML, data analytics, and software development.</p>
+              </div>
+              <a class="resume-download" href="public/RESUME.pdf" download="Shreya-Gupta-Resume.pdf">DOWNLOAD PDF <span>↓</span></a>
+            </div>
+            <div class="resume-preview" aria-label="Resume preview">
+              <article>
+                <header><strong>SHREYA GUPTA</strong><span>AI/ML · DATA · SOFTWARE</span></header>
+                <p class="resume-contact">0241csiot135@niet.co.in · Delhi NCR, India</p>
+                <section><h3>EDUCATION</h3><p><strong>B.Tech — Computer Science &amp; Engineering (IoT)</strong><br />Noida Institute of Engineering and Technology · 2024–Present · CGPA 8.4/10</p></section>
+                <section><h3>PROJECTS</h3><p><strong>Loan Default Risk Dashboard</strong><br />Data exploration and dashboard visualisation for borrower and default-risk patterns.</p><p><strong>Mental Health Score Prediction</strong><br />Machine learning pipeline using Python, Pandas, NumPy and Scikit-learn.</p></section>
+                <section><h3>SKILLS</h3><p>Machine Learning · Python · SQL · Java · Pandas · NumPy · Scikit-learn · Git · GitHub · MySQL · MongoDB · IoT · Full-Stack Development</p></section>
+                <section><h3>EXPERIENCE &amp; COMMUNITY</h3><p>Vice President, Machine Magnets NIET · GirlScript Summer of Code 2026 contributor · IDEAHACK 2.0 participant</p></section>
+              </article>
+            </div>
           </section>
 
           <section class="view view-contact" data-panel="contact" hidden>
@@ -178,7 +238,9 @@
           <button data-view="work">Selected work <span>01</span></button>
           <button data-view="about">About me <span>02</span></button>
           <button data-view="archive">Archive <span>03</span></button>
-          <button data-view="contact">Contact <span>04</span></button>
+          <a href="public/RESUME.pdf" download="Shreya-Gupta-Resume.pdf">Resume <span>04</span></a>
+          <button data-view="contact">Contact <span>05</span></button>
+          <button id="replay-intro">Replay intro <span>↻</span></button>
         </div>
       </nav>
       <p class="bottom-caption">AI ENTHUSIAST · FULL-STACK DEVELOPER <span>© <span id="copyright-year"></span></span></p>
