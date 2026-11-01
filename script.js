@@ -28,7 +28,10 @@ const menuButton = document.querySelector("#menu-button");
 const menuPopover = document.querySelector("#menu-popover");
 const toast = document.querySelector("#toast");
 const introScreen = document.querySelector("#intro-screen");
+const resumeButton = document.querySelector("#resume-button");
+const resumeButtonLabel = document.querySelector("#resume-button-label");
 let toastTimeout;
+let resumeConfirmationTimeout;
 
 const viewTitles = {
   work: "SHREYA GUPTA — SELECTED WORK",
@@ -64,6 +67,45 @@ function showToast(message) {
   window.clearTimeout(toastTimeout);
   toastTimeout = window.setTimeout(() => toast.classList.remove("visible"), 2400);
 }
+
+resumeButton.addEventListener("pointermove", (event) => {
+  const bounds = resumeButton.getBoundingClientRect();
+  const x = (event.clientX - bounds.left) / bounds.width;
+  const y = (event.clientY - bounds.top) / bounds.height;
+  resumeButton.style.setProperty("--tilt-x", `${(0.5 - y) * 9}deg`);
+  resumeButton.style.setProperty("--tilt-y", `${(x - 0.5) * 11}deg`);
+  resumeButton.style.setProperty("--shine-x", `${x * 100}%`);
+  resumeButton.style.setProperty("--shine-y", `${y * 100}%`);
+});
+
+resumeButton.addEventListener("pointerleave", () => {
+  resumeButton.style.setProperty("--tilt-x", "0deg");
+  resumeButton.style.setProperty("--tilt-y", "0deg");
+  resumeButton.style.setProperty("--shine-x", "50%");
+  resumeButton.style.setProperty("--shine-y", "50%");
+});
+
+resumeButton.addEventListener("click", () => {
+  const resumeUrl = new URL("public/RESUME.pdf", document.baseURI).href;
+  window.open(resumeUrl, "_blank", "noopener,noreferrer");
+
+  const download = document.createElement("a");
+  download.href = resumeUrl;
+  download.download = "Shreya_Gupta_Resume.pdf";
+  download.hidden = true;
+  document.body.append(download);
+  download.click();
+  download.remove();
+
+  resumeButton.classList.add("is-confirmed");
+  resumeButtonLabel.textContent = "RESUME READY";
+  showToast("Resume PDF opened in a new tab and download started.");
+  window.clearTimeout(resumeConfirmationTimeout);
+  resumeConfirmationTimeout = window.setTimeout(() => {
+    resumeButton.classList.remove("is-confirmed");
+    resumeButtonLabel.textContent = "DOWNLOAD RESUME";
+  }, 2000);
+});
 
 document.querySelectorAll("[data-view]").forEach((button) => {
   button.addEventListener("click", () => showView(button.dataset.view));
@@ -168,9 +210,9 @@ function drawLiquidSculpture(time = 0) {
 
   const cx = rect.width * 0.5;
   const cy = rect.height * 0.51;
-  const rx = rect.width * 0.455;
-  const ry = rect.height * 0.455;
-  const idle = liquidReduceMotion.matches ? 0 : Math.sin(time * 0.00072) * 0.009;
+  const rx = rect.width * 0.41;
+  const ry = rect.height * 0.38;
+  const idle = liquidReduceMotion.matches ? 0 : Math.sin(time * 0.00072) * 0.006;
   const pointCount = 96;
   const points = [];
 
@@ -186,9 +228,9 @@ function drawLiquidSculpture(time = 0) {
     const angle = (i / pointCount) * Math.PI * 2;
     const contour =
       1 +
-      0.045 * Math.sin(angle * 2.05 - 0.55) +
-      0.028 * Math.sin(angle * 3.15 + 1.1) +
-      0.012 * Math.sin(angle * 5.12 - 0.2) +
+      0.075 * Math.sin(angle * 2.12 - 0.72) +
+      0.035 * Math.sin(angle * 3.28 + 0.38) +
+      0.022 * Math.cos(angle * 5.05 - 0.18) +
       idle;
 
     const distanceFromPointer = angularDistance(angle, pointerAngle);
@@ -220,37 +262,77 @@ function drawLiquidSculpture(time = 0) {
   }
   ctx.closePath();
 
-  const gradient = ctx.createLinearGradient(rect.width * 0.08, rect.height * 0.08, rect.width * 0.92, rect.height * 0.88);
-  gradient.addColorStop(0, "#9a62ed");
-  gradient.addColorStop(0.28, "#8750e9");
-  gradient.addColorStop(0.58, "#6448e5");
-  gradient.addColorStop(0.84, "#3c78ef");
-  gradient.addColorStop(1, "#8a62eb");
+  const gradient = ctx.createLinearGradient(rect.width * 0.12, rect.height * 0.06, rect.width * 0.88, rect.height * 0.94);
+  gradient.addColorStop(0, "rgba(244,238,255,.82)");
+  gradient.addColorStop(0.19, "rgba(177,139,235,.58)");
+  gradient.addColorStop(0.42, "rgba(132,108,224,.42)");
+  gradient.addColorStop(0.68, "rgba(92,139,231,.35)");
+  gradient.addColorStop(0.86, "rgba(67,112,204,.22)");
+  gradient.addColorStop(1, "rgba(232,226,255,.62)");
   ctx.fillStyle = gradient;
   ctx.fill();
 
   ctx.save();
   ctx.clip();
-  const upperLight = ctx.createRadialGradient(rect.width * 0.30, rect.height * 0.20, 0, rect.width * 0.30, rect.height * 0.20, rect.width * 0.46);
-  upperLight.addColorStop(0, `rgba(239,229,255,${0.34 + liquid.strength * 0.08})`);
-  upperLight.addColorStop(0.18, "rgba(213,198,255,.18)");
-  upperLight.addColorStop(0.62, "rgba(163,130,255,0)");
-  ctx.fillStyle = upperLight;
+  const sweep = ctx.createLinearGradient(rect.width * 0.03, rect.height * 0.82, rect.width * 0.96, rect.height * 0.12);
+  sweep.addColorStop(0, "rgba(65,71,176,.01)");
+  sweep.addColorStop(0.28, "rgba(67,75,184,.16)");
+  sweep.addColorStop(0.48, "rgba(255,255,255,.66)");
+  sweep.addColorStop(0.56, "rgba(202,187,248,.12)");
+  sweep.addColorStop(0.78, "rgba(54,107,211,.24)");
+  sweep.addColorStop(1, "rgba(255,255,255,.04)");
+  ctx.fillStyle = sweep;
+  ctx.beginPath();
+  ctx.moveTo(rect.width * 0.08, rect.height * 0.35);
+  ctx.bezierCurveTo(rect.width * 0.34, rect.height * 0.04, rect.width * 0.68, rect.height * 0.24, rect.width * 0.9, rect.height * 0.58);
+  ctx.bezierCurveTo(rect.width * 0.62, rect.height * 0.96, rect.width * 0.28, rect.height * 0.84, rect.width * 0.08, rect.height * 0.35);
+  ctx.fill();
+
+  const prism = ctx.createRadialGradient(rect.width * 0.68, rect.height * 0.28, 0, rect.width * 0.68, rect.height * 0.28, rect.width * 0.29);
+  prism.addColorStop(0, "rgba(243,249,255,.58)");
+  prism.addColorStop(0.22, "rgba(216,235,255,.24)");
+  prism.addColorStop(0.54, "rgba(108,153,230,.09)");
+  prism.addColorStop(1, "rgba(71,86,181,0)");
+  ctx.fillStyle = prism;
   ctx.fillRect(0, 0, rect.width, rect.height);
 
-  const blueDepth = ctx.createRadialGradient(rect.width * 0.78, rect.height * 0.75, 0, rect.width * 0.78, rect.height * 0.75, rect.width * 0.42);
-  blueDepth.addColorStop(0, "rgba(77,151,250,.48)");
-  blueDepth.addColorStop(0.42, "rgba(76,103,238,.18)");
-  blueDepth.addColorStop(1, "rgba(70,43,178,0)");
-  ctx.fillStyle = blueDepth;
+  const violetDepth = ctx.createRadialGradient(rect.width * 0.18, rect.height * 0.66, 0, rect.width * 0.18, rect.height * 0.66, rect.width * 0.3);
+  violetDepth.addColorStop(0, "rgba(99,73,183,.28)");
+  violetDepth.addColorStop(0.46, "rgba(121,91,202,.12)");
+  violetDepth.addColorStop(1, "rgba(121,91,202,0)");
+  ctx.fillStyle = violetDepth;
   ctx.fillRect(0, 0, rect.width, rect.height);
 
-  const edgeShade = ctx.createLinearGradient(0, rect.height * 0.25, rect.width, rect.height * 0.82);
-  edgeShade.addColorStop(0, "rgba(255,255,255,.04)");
-  edgeShade.addColorStop(0.72, "rgba(37,27,142,.03)");
-  edgeShade.addColorStop(1, "rgba(35,30,128,.16)");
-  ctx.fillStyle = edgeShade;
-  ctx.fillRect(0, 0, rect.width, rect.height);
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  ctx.moveTo(rect.width * 0.17, rect.height * 0.64);
+  ctx.bezierCurveTo(rect.width * 0.24, rect.height * 0.24, rect.width * 0.6, rect.height * 0.12, rect.width * 0.79, rect.height * 0.34);
+  ctx.strokeStyle = "rgba(255,255,255,.58)";
+  ctx.lineWidth = Math.max(2.2, rect.width * 0.006);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(rect.width * 0.27, rect.height * 0.78);
+  ctx.bezierCurveTo(rect.width * 0.43, rect.height * 0.91, rect.width * 0.72, rect.height * 0.71, rect.width * 0.82, rect.height * 0.46);
+  ctx.strokeStyle = "rgba(189,221,255,.34)";
+  ctx.lineWidth = Math.max(1.2, rect.width * 0.003);
+  ctx.stroke();
+  ctx.restore();
+  ctx.restore();
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(points[0].x, points[0].y);
+  for (let i = 1; i < points.length - 1; i += 1) {
+    const midX = (points[i].x + points[i + 1].x) * 0.5;
+    const midY = (points[i].y + points[i + 1].y) * 0.5;
+    ctx.quadraticCurveTo(points[i].x, points[i].y, midX, midY);
+  }
+  ctx.closePath();
+  ctx.strokeStyle = "rgba(255,255,255,.72)";
+  ctx.lineWidth = 1.15;
+  ctx.stroke();
   ctx.restore();
 
   desktop.style.setProperty("--liquid-strength", liquid.strength.toFixed(3));

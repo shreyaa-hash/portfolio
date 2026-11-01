@@ -66,7 +66,7 @@
 
     <main class="desktop" id="home">
       <div class="ambient ambient-one" aria-hidden="true">
-        <canvas id="liquid-sculpture"></canvas>
+        <canvas id="liquid-sculpture" hidden></canvas>
       </div>
       <div class="grain" aria-hidden="true"></div>
 
@@ -75,26 +75,38 @@
         <time id="clock"></time>
       </div>
 
+      <header class="desktop-identity">
+        <p>SHREYA GUPTA</p>
+        <span>AI / ML · FULL-STACK DEVELOPER</span>
+        <small>Turning data and ideas into practical technology.</small>
+      </header>
+
       <button class="desktop-item item-left-top" data-view="work" aria-label="Open selected work">
-        <span class="file-icon gif-icon"><span>.WORK</span></span>
+        <span class="folder-icon work-folder"><span>WORK</span></span>
         <span class="item-label">SELECTED_WORK</span>
       </button>
       <button class="desktop-item item-left-bottom" data-view="about" aria-label="Open about me">
-        <span class="file-icon red-icon"><span>HELLO</span></span>
+        <span class="folder-icon about-folder"><span>TXT</span></span>
         <span class="item-label">ABOUT_ME.txt</span>
       </button>
       <button class="desktop-item item-right-top" data-view="archive" aria-label="Open archive">
-        <span class="folder-icon"><span>.JPG</span></span>
+        <span class="folder-icon archive-folder"><span>JPG</span></span>
         <span class="item-label">ARCHIVE</span>
       </button>
-      <button class="desktop-item item-right-middle" data-view="resume" aria-label="Open resume">
-        <span class="folder-icon resume-folder"><span>.PDF</span></span>
-        <span class="item-label">RESUME.pdf</span>
-      </button>
       <button class="desktop-item item-right-bottom" data-view="contact" aria-label="Open contact">
-        <span class="folder-icon blue-folder"><span>.LINK</span></span>
+        <span class="folder-icon contact-folder"><span>LINK</span></span>
         <span class="item-label">CONTACTS</span>
       </button>
+      <div class="resume-control">
+        <button class="resume-button" id="resume-button" type="button" aria-label="Open and download Shreya Gupta's resume">
+          <span class="resume-button-face">
+            <span class="resume-button-label" id="resume-button-label">DOWNLOAD RESUME</span>
+            <svg class="resume-download-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 2.75v9.5m0 0 3.25-3.5M10 12.25 6.75 8.75M3.5 13.75v2.5h13v-2.5" />
+            </svg>
+          </span>
+        </button>
+      </div>
 
       <section class="window" id="portfolio-window" aria-label="Portfolio window">
         <header class="window-header">
@@ -183,18 +195,9 @@
                 <h2>Resume <span>2026</span></h2>
                 <p>Computer Science (IoT), AI/ML, data analytics, and software development.</p>
               </div>
-              <a class="resume-download" href="public/RESUME.pdf" download="Shreya-Gupta-Resume.pdf">DOWNLOAD PDF <span>↓</span></a>
+              <a class="resume-download" href="public/RESUME.pdf" target="_blank" rel="noopener noreferrer">OPEN ORIGINAL PDF <span>↗</span></a>
             </div>
-            <div class="resume-preview" aria-label="Resume preview">
-              <article>
-                <header><strong>SHREYA GUPTA</strong><span>AI/ML · DATA · SOFTWARE</span></header>
-                <p class="resume-contact">0241csiot135@niet.co.in · Delhi NCR, India</p>
-                <section><h3>EDUCATION</h3><p><strong>B.Tech — Computer Science &amp; Engineering (IoT)</strong><br />Noida Institute of Engineering and Technology · 2024–Present · CGPA 8.4/10</p></section>
-                <section><h3>PROJECTS</h3><p><strong>Loan Default Risk Dashboard</strong><br />Data exploration and dashboard visualisation for borrower and default-risk patterns.</p><p><strong>Mental Health Score Prediction</strong><br />Machine learning pipeline using Python, Pandas, NumPy and Scikit-learn.</p></section>
-                <section><h3>SKILLS</h3><p>Machine Learning · Python · SQL · Java · Pandas · NumPy · Scikit-learn · Git · GitHub · MySQL · MongoDB · IoT · Full-Stack Development</p></section>
-                <section><h3>EXPERIENCE &amp; COMMUNITY</h3><p>Vice President, Machine Magnets NIET · GirlScript Summer of Code 2026 contributor · IDEAHACK 2.0 participant</p></section>
-              </article>
-            </div>
+            <p class="resume-source-note">This opens the original resume PDF stored with the site. Use the floating glass button to open it and download a copy.</p>
           </section>
 
           <section class="view view-contact" data-panel="contact" hidden>
@@ -238,7 +241,7 @@
           <button data-view="work">Selected work <span>01</span></button>
           <button data-view="about">About me <span>02</span></button>
           <button data-view="archive">Archive <span>03</span></button>
-          <a href="public/RESUME.pdf" download="Shreya-Gupta-Resume.pdf">Resume <span>04</span></a>
+          <a href="public/RESUME.pdf" download="Shreya_Gupta_Resume.pdf">Resume <span>04</span></a>
           <button data-view="contact">Contact <span>05</span></button>
           <button id="replay-intro">Replay intro <span>↻</span></button>
         </div>
