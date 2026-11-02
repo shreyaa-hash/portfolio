@@ -132,6 +132,7 @@ h1 span, .section-heading span, .about-copy h2 span, .contact-layout h2 span { c
 .project-card:hover .project-art { transform: translateY(-3px); box-shadow: 0 12px 24px #15111b19; }
 .art-orange { color: #fff9e9; background: radial-gradient(ellipse at 75% 30%, #ffbc80 0, transparent 31%), linear-gradient(135deg, #f16f46, #c34430 80%); }
 .art-lilac { color: #fff; background: linear-gradient(135deg, #afa2f5, #7356df); }
+.art-blue { color: #fff; background: radial-gradient(ellipse at 75% 30%, #78b5ff 0, transparent 35%), linear-gradient(135deg, #3178c6, #183d70 85%); }
 .art-project-image { background: #e3eee2; }
 .art-project-image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 47%; }
 .art-project-image:after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 48%, rgba(16,25,20,.52)); }
@@ -194,8 +195,10 @@ h1 span, .section-heading span, .about-copy h2 span, .contact-layout h2 span { c
 .project-detail-art img + span { position: relative; z-index: 1; max-width: 80%; padding: 10px 14px; border-radius: 999px; background: rgba(17,23,20,.72); backdrop-filter: blur(8px); font-family: "Space Grotesk", sans-serif; font-size: clamp(12px, 2vw, 20px); font-weight: 700; letter-spacing: -.03em; }
 .project-detail-art.theme-lilac { background: linear-gradient(135deg, #afa2f5, #7356df); }
 .project-detail-art.theme-green { background: linear-gradient(135deg, #c4cf81, #586c4e); }
+.project-detail-art.theme-blue { background: radial-gradient(ellipse at 75% 30%, #78b5ff 0, transparent 35%), linear-gradient(135deg, #3178c6, #183d70 85%); }
 .project-description { max-width: 590px; color: #68636d; font-size: 13px; line-height: 1.8; }
 .project-tools { margin: 18px 0; color: #77717c; font-size: 10px; font-weight: 600; line-height: 1.7; letter-spacing: .04em; }
+.project-links { display: flex; flex-wrap: wrap; gap: 12px 22px; }
 .dock { position: fixed; z-index: 5; bottom: 20px; left: 50%; display: grid; width: min(560px, calc(100vw - 40px)); height: 58px; grid-template-columns: 1fr 2fr 1fr; align-items: center; padding: 0 12px; transform: translateX(-50%); border: 1px solid #48464b; border-radius: 20px; background: linear-gradient(180deg, rgba(31,30,34,.98), rgba(14,14,16,.98)); box-shadow: inset 0 1px 0 rgba(255,255,255,.11), 0 14px 36px rgba(25,16,43,.24), 0 3px 8px rgba(25,16,43,.15); backdrop-filter: blur(20px); color: white; }
 .dock-mark { width: fit-content; padding: 7px 10px; border: 1px solid rgba(255,255,255,.09); border-radius: 13px; background: rgba(255,255,255,.025); color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 27px; font-weight: 700; letter-spacing: -.12em; text-decoration: none; transition: background .25s ease, transform .25s ease; }
 .dock-mark:hover { background: rgba(255,255,255,.08); transform: translateY(-2px); }

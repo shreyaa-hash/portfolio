@@ -18,6 +18,19 @@ const projects = [
     theme: "theme-lilac",
     image: "public/Mental-health.png",
   },
+  {
+    name: "GITHUB CLONE",
+    category: "FULL-STACK DEVELOPMENT PROJECT",
+    tools: "React · Node.js · Express · MongoDB · Mongoose · JWT · AI features",
+    title: "GitHub Clone",
+    description:
+      "A full-stack GitHub-inspired platform with user registration and sign-in, repository browsing, and AI-powered developer tools. The React frontend connects to a Node.js and Express backend, with MongoDB for data storage and JWT-based authentication.",
+    theme: "theme-blue",
+    image: "public/github-clone.png",
+    github: "https://github.com/shreyaa-hash/github-clone-frontend",
+    backendGithub: "https://github.com/shreyaa-hash/github-clone",
+    live: "https://github-clone-frontend-iota.vercel.app/",
+  },
 ];
 
 const windowElement = document.querySelector("#portfolio-window");
@@ -128,6 +141,17 @@ document.querySelectorAll("[data-project]").forEach((button) => {
       : "";
     artwork.setAttribute("aria-label", `${project.name} project artwork`);
     artwork.dataset.projectName = project.name;
+    const sourceLink = document.querySelector("#project-source-link");
+    sourceLink.href = project.github || "https://github.com/shreyaa-hash";
+    sourceLink.firstChild.textContent = project.github
+      ? "FRONTEND SOURCE CODE "
+      : "EXPLORE MY GITHUB PROFILE ";
+    const backendLink = document.querySelector("#project-backend-link");
+    backendLink.hidden = !project.backendGithub;
+    if (project.backendGithub) backendLink.href = project.backendGithub;
+    const liveLink = document.querySelector("#project-live-link");
+    liveLink.hidden = !project.live;
+    if (project.live) liveLink.href = project.live;
     showView("project");
   });
 });
