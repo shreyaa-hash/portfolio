@@ -1,12 +1,12 @@
 const projects = [
   {
-    name: "LOAN DEFAULT RISK DASHBOARD",
-    category: "DATA ANALYTICS PROJECT",
-    tools: "Loan data · Exploratory data analysis · Risk visualization · Dashboard",
-    title: "Loan Default Risk Dashboard",
+    name: "AI-ASSISTED HSRP RECOGNITION & SMART CAMPUS PARKING",
+    category: "IoT + COMPUTER VISION PROJECT",
+    tools: "Python · YOLO · OCR · OpenCV · Raspberry Pi · Flask · IoT",
+    title: "AI-Assisted HSRP Recognition & Smart Campus Parking",
     description:
-      "Processed and explored loan-related data to examine borrower characteristics, loan distributions, and patterns associated with default risk. Developed a dashboard with key indicators, summary metrics, and visual comparisons to make risk patterns easier to interpret.",
-    theme: "theme-orange",
+      "Developed an edge-AI based parking system using YOLO for automatic vehicle number plate detection and OCR for registration number extraction. Integrated ultrasonic sensors for parking occupancy monitoring and servo motor-based automated vehicle access control, then built a Flask dashboard for real-time system status updates.",
+    theme: "theme-green",
   },
   {
     name: "MENTAL HEALTH SCORE PREDICTION",
@@ -19,10 +19,10 @@ const projects = [
     image: "public/Mental-health.png",
   },
   {
-    name: "GITHUB CLONE",
+    name: "AI-POWERED GITHUB CLONE",
     category: "FULL-STACK DEVELOPMENT PROJECT",
     tools: "React · Node.js · Express · MongoDB · Mongoose · JWT · AI features",
-    title: "GitHub Clone",
+    title: "AI-Powered GitHub Clone",
     description:
       "A full-stack GitHub-inspired platform with user registration and sign-in, repository browsing, and AI-powered developer tools. The React frontend connects to a Node.js and Express backend, with MongoDB for data storage and JWT-based authentication.",
     theme: "theme-blue",
@@ -30,6 +30,26 @@ const projects = [
     github: "https://github.com/shreyaa-hash/github-clone-frontend",
     backendGithub: "https://github.com/shreyaa-hash/github-clone",
     live: "https://github-clone-frontend-iota.vercel.app/",
+  },
+  {
+    name: "SMART INVENTORY & SUPPLY CHAIN ANALYTICS PLATFORM",
+    category: "DATA ANALYTICS PROJECT",
+    tools: "Python · MySQL · Machine Learning · Data Analytics · Inventory Forecasting",
+    title: "Smart Inventory & Supply Chain Analytics Platform",
+    description:
+      "Developed an inventory analytics platform to monitor stock levels, analyze sales trends, and identify potential stockout risks. Implemented demand forecasting, safety stock calculations, and inventory performance metrics to support supply chain decision-making.",
+    theme: "theme-orange",
+  },
+  {
+    name: "PERSONAL PORTFOLIO WEBSITE",
+    category: "FRONTEND DEVELOPMENT PROJECT",
+    tools: "HTML · CSS · JavaScript · Responsive UI · Portfolio Design",
+    title: "Personal Portfolio Website",
+    description:
+      "Designed and developed a personal portfolio website to showcase technical skills, projects, and professional experience. Implemented interactive UI components and custom styling to create a polished, responsive user experience.",
+    theme: "theme-lilac",
+    image: "public/portfolio.png",
+    github: "https://github.com/shreyaa-hash/portfolio",
   },
 ];
 

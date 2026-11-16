@@ -244,6 +244,18 @@ h1 span, .section-heading span, .about-copy h2 span, .contact-layout h2 span { c
 .resume-download { flex: 0 0 auto; padding: 11px 14px; border: 1px solid #dedbe2; border-radius: 10px; background: #17151a; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-decoration: none; }
 .resume-download span { margin-left: 10px; }
 .resume-source-note { max-width: 520px; margin: 32px 0; color: #68636d; font-size: 12px; line-height: 1.7; }
+.resume-structured { display: grid; gap: 24px; margin-top: 28px; }
+.resume-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 22px; }
+.resume-column { display: grid; gap: 22px; }
+.resume-section { padding: 18px 20px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.28); }
+.resume-section h3 { margin: 0 0 14px; color: #2a2530; font-family: "Space Grotesk", sans-serif; font-size: 18px; letter-spacing: -.04em; }
+.resume-section p { margin: 0; color: #66606a; font-size: 12px; line-height: 1.8; }
+.resume-section ul { margin: 0; padding-left: 18px; color: #68636d; font-size: 11px; line-height: 1.7; }
+.resume-section li { margin-bottom: 10px; }
+.resume-section li:last-child { margin-bottom: 0; }
+.resume-section strong { color: #2d2632; }
+.resume-section span, .resume-section small { display: block; color: #776f82; }
+.resume-section small { margin-top: 3px; font-size: 10px; }
 
 @media (min-width: 1400px) {
   .window { width: min(1000px, 68vw); height: min(790px, calc(100svh - 180px)); }
